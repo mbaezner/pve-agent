@@ -1,0 +1,39 @@
+---
+- name: Install dependencies
+  become: true
+  ansible.builtin.package:
+    name: git
+    state: present
+
+- name: Download script
+  become: true
+  ansible.builtin.git:
+    repo: "https://code.saturndawn.me/matthew/pve-agent.git"
+    dest: "/tmp/pve-agent"
+
+- name: Check snippets directory exists
+  ansible.builtin.file:
+    path: "/var/lib/vz/snippets"
+    owner: root
+    group: root
+    mode: "0755"
+    state: directory
+
+- name: Install script
+  become: true
+  ansible.builtin.copy:
+    remote_src: true
+    src: "/tmp/pve-agent/pve-agent.sh"
+    dest: "/var/lib/vz/snippets/pve-agent.sh"
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Install cronjob
+  become: true
+  ansible.builtin.cron:
+    name: pve-agent
+    job: "/var/lib/vz/snippets/pve-agent.sh"
+    minute: "*/5"
+    user: root
+    state: present

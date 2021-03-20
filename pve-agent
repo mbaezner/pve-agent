@@ -1,0 +1,10 @@
+# logrotate
+
+/var/log/pve-agent.log {
+        missingok
+        compress
+        copytruncate
+        daily
+        rotate 3
+        notifempty
+}
