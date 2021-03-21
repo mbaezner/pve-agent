@@ -15,7 +15,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 **Require sudo permissions**
 
 1. Login to the Proxmox host
-2. `git clone https://code.saturndawn.me/matthew/pve-agent /tmp/pve-agent`
+2. `git clone https://github.com/mbaezner/pve-agent.git /tmp/pve-agent`
 3. `sudo cp /tmp/pve-agent/pve-agent.sh /var/lib/vz/snippets/pve-agent.sh`
 4. `sudo chmod +x /var/lib/vz/snippets/pve-agent.sh`
 
