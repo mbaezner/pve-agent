@@ -2,7 +2,7 @@
 
 ## Description
 
-Shell script to autmatically start, stop, restart virtual machines; and perform healthchecks.  The script is designed to be executed on a schedule using cron.  The scripts reads the description of every virtual machine on the host looking for the key words in the description and performing any required actions.
+Shell script to automatically start, stop, restart virtual machines; and perform healthchecks.  The script is designed to be executed on a schedule using cron.  The script reads the description of every virtual machine on the host looking for the keywords in the description and performing any required actions.
 
 ## Usage
 
