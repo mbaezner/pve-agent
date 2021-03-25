@@ -8,7 +8,7 @@
 - name: Download script
   become: true
   ansible.builtin.git:
-    repo: "https://code.saturndawn.me/matthew/pve-agent.git"
+    repo: "https://github.com/mbaezner/pve-agent.git"
     dest: "/tmp/pve-agent"
 
 - name: Check snippets directory exists
