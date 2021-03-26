@@ -18,7 +18,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 2. `git clone https://github.com/mbaezner/pve-agent.git /tmp/pve-agent`
 3. `sudo cp /tmp/pve-agent/pve-agent.sh /var/lib/vz/snippets/pve-agent.sh`
 4. `sudo chmod +x /var/lib/vz/snippets/pve-agent.sh`
-5. `sudo crontab -l | { cat; echo '*/5 * * * * /var/lib/vz/snippets/pve-agent.sh'; } | crontab -`
+5. `sudo crontab -l | { cat; echo '*/5 * * * * /var/lib/vz/snippets/pve-agent.sh'; } | sudo crontab -`
 
 ### Ansible
 
@@ -31,7 +31,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 **Require sudo permission**
 
 1. Login to the Proxmox host
-2. `sudo crontab -l | grep --invert-match 'pve-agent.sh' | crontab -`
+2. `sudo crontab -l | grep --invert-match 'pve-agent.sh' | sudo crontab -`
 3. `rm /var/lib/vz/snippets/pve-agent.sh`
 
 ## Functions
