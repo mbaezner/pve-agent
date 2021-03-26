@@ -2,7 +2,7 @@
 
 ## Description
 
-Shell script to automatically start, stop, restart virtual machines; and perform healthchecks.  The script is designed to be executed on a schedule using cron.  The script reads the description of every virtual machine on the host looking for the keywords in the description and performing any required actions.
+Shell script to automatically start, stop, restart virtual machines; and perform healthchecks.  The script is designed to be executed on a schedule using cron.  The script reads the description of every virtual machine on the host looking for function keywords in the description and performing any required actions.
 
 ## Usage
 
@@ -29,7 +29,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 
 | Policy   | Description                                                    |
 | -------- | -------------------------------------------------------------- |
-| `no`     | Do not automatically restart the virtual machine (the default) |
+| `no`     | Do not automatically restart the virtual machine (default) |
 | `always` | Always restart the virtual machine when it is not running      |
 
 #### Examples
