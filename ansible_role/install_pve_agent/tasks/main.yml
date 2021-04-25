@@ -12,6 +12,7 @@
     dest: "/tmp/pve-agent"
 
 - name: Check snippets directory exists
+  become: true
   ansible.builtin.file:
     path: "/var/lib/vz/snippets"
     owner: root
