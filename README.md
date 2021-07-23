@@ -12,7 +12,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 
 ### Manually 
 
-**Require sudo permission**
+**Requires sudo permission**
 
 1. Login to the Proxmox host
 2. `git clone https://github.com/mbaezner/pve-agent.git /tmp/pve-agent`
@@ -21,7 +21,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 5. `sudo cp /tmp/pve-agent/usr/lib/systemd/system/pve-agent.service /usr/lib/systemd/system/pve-agent.service`
 6. `sudo cp /tmp/pve-agent/usr/lib/systemd/system/pve-agent.timer /usr/lib/systemd/system/pve-agent.timer`
 7. `systemctl daemon-reload`
-8. `systemctl enable --now pve-agent.timer`
+8. `systemctl enable pve-agent.timer`
 
 ### Ansible
 
@@ -31,7 +31,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 
 ### Manually
 
-**Require sudo permission**
+**Requires sudo permission**
 
 1. Login to the Proxmox host
 2. `sudo crontab -l | grep --invert-match 'pve-agent.sh' | sudo crontab -`
@@ -41,7 +41,7 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 
 ### Manually
 
-**Require sudo permission**
+**Requires sudo permission**
 
 1. Login to the Proxmox host
 2. Follow the remove instructions above
