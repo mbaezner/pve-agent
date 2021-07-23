@@ -1,0 +1,6 @@
+[Unit]
+Description=Monitor Proxmox VE virtual machines
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pve-agent

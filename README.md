@@ -16,9 +16,12 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 
 1. Login to the Proxmox host
 2. `git clone https://github.com/mbaezner/pve-agent.git /tmp/pve-agent`
-3. `sudo cp /tmp/pve-agent/pve-agent.sh /var/lib/vz/snippets/pve-agent.sh`
-4. `sudo chmod +x /var/lib/vz/snippets/pve-agent.sh`
-5. `sudo crontab -l | { cat; echo '*/5 * * * * /var/lib/vz/snippets/pve-agent.sh'; } | sudo crontab -`
+3. `sudo cp /tmp/pve-agent/usr/bin/pve-agent /usr/bin/pve-agent`
+4. `sudo chmod +x /usr/bin/pve-agent`
+5. `sudo cp /tmp/pve-agent/usr/lib/systemd/system/pve-agent.service /usr/lib/systemd/system/pve-agent.service`
+6. `sudo cp /tmp/pve-agent/usr/lib/systemd/system/pve-agent.timer /usr/lib/systemd/system/pve-agent.timer`
+7. `systemctl daemon-reload`
+8. `systemctl enable --now pve-agent.timer`
 
 ### Ansible
 
@@ -33,6 +36,20 @@ Add any or all of the function keywords with a parameter into the "Notes" sectio
 1. Login to the Proxmox host
 2. `sudo crontab -l | grep --invert-match 'pve-agent.sh' | sudo crontab -`
 3. `rm /var/lib/vz/snippets/pve-agent.sh`
+
+## Upgrade 1.0 to 1.1
+
+### Manually
+
+**Require sudo permission**
+
+1. Login to the Proxmox host
+2. Follow the remove instructions above
+4. Follow the install instructions above
+
+### Ansible
+
+1. See ansible role
 
 ## Functions
 
@@ -88,4 +105,5 @@ qm_healthcheck curl --fail --silent --output /dev/null http://localhost:80
 ## Inspiration
 
 - [ayufan/pve-helpers](https://github.com/ayufan/pve-helpers)
+- [Jamesits/pve-fake-subscription](https://github.com/Jamesits/pve-fake-subscription)
 - [Start containers automatically](https://docs.docker.com/config/containers/start-containers-automatically/#use-a-restart-policy)

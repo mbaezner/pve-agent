@@ -1,0 +1,10 @@
+[Unit]
+Description=Check Proxmox VE virtual machines every 5 minutes
+
+[Timer]
+OnActiveSec=0s
+OnBootSec=0s
+OnCalendar=*:0/5
+
+[Install]
+WantedBy=timers.target

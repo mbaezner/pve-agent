@@ -17,7 +17,7 @@
 # IMPORTS
 
 source "./assert.sh"
-source ".././pve-agent.sh"
+source "../usr/bin/./pve-agent.sh"
 
 ## mock functions
 
