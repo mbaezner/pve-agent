@@ -102,6 +102,16 @@ Appends "-healthy" to the virtual machine name when the commands returns 0, or "
 qm_healthcheck curl --fail --silent --output /dev/null http://localhost:80
 ```
 
+## Release Notes
+
+### 1.1
+
+- Migrate from cron to systemd service and timer
+
+### 1.0
+
+- First release
+
 ## Inspiration
 
 - [ayufan/pve-helpers](https://github.com/ayufan/pve-helpers)
