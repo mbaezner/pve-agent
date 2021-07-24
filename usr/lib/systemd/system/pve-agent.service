@@ -2,5 +2,5 @@
 Description=Monitor Proxmox VE virtual machines
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart=/usr/bin/pve-agent
